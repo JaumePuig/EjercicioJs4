@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sincronización Crítica</title>
+    <style>
+      body {
+        background: #050505;
+        color: #00ff00;
+        font-family: "Courier New", monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #system-log {
+        width: 80%;
+        height: 200px;
+        border: 1px solid #00ff00;
+        overflow-y: scroll;
+        padding: 10px;
+        margin-top: 20px;
+        font-size: 12px;
+      }
+      .light {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        margin: 10px;
+        opacity: 0.2;
+      }
+      .active {
+        opacity: 1;
+        box-shadow: 0 0 20px currentColor;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SYSTEM STATUS: <span id="timer">00</span>s</h1>
+    <div id="traffic-light">
+      <div id="red" class="light" style="color: red; background: red"></div>
+      <div
+        id="yellow"
+        class="light"
+        style="color: yellow; background: yellow"
+      ></div>
+      <div
+        id="green"
+        class="light"
+        style="color: green; background: green"
+      ></div>
+    </div>
+    <div id="system-log"></div>
+
+    <script src="/assets/js/kernel_clock.js"></script>
+    <script src="/assets/js/logic_processor.js"></script>
+  </body>
+</html>
